@@ -6,11 +6,13 @@ This project presents an autonomous mobile robot system developed using ROS for 
 
 The robot is capable of detecting, picking, transporting, and placing objects within a simulated warehouse environment. The system integrates computer vision, control, and robotic manipulation into a complete end-to-end pipeline.
 
+This project demonstrates a complete perception–planning–control pipeline for autonomous robotic manipulation in warehouse environments.
+
 ---
 
 ## Problem Statement
 
-Warehouse operations are often slow, repetitive, and labour-intensive, leading to inefficiencies and increased costs.
+Warehouse operations are often slow, repetitive, and labour-intensive, leading to inefficiencies and increased operational costs.
 
 This project demonstrates how autonomous mobile robots can improve logistics efficiency by performing object handling tasks without human intervention, aligning with Industry 4.0 automation goals.
 
@@ -18,18 +20,7 @@ This project demonstrates how autonomous mobile robots can improve logistics eff
 
 ## System Architecture
 
-### Robot Platform
-
-* TurtleBot3 Waffle mobile robot (ROS-compatible)
-* Custom-designed robotic arm (URDF-based)
-* Suction gripper for object manipulation
-
-### Core Technologies
-
-* ROS (rospy)
-* OpenCV (image processing)
-* Gazebo (simulation)
-* URDF (robot modelling)
+Camera → OpenCV Detection → Control Logic → Navigation → Arm Controller → Object Manipulation
 
 ---
 
@@ -75,6 +66,7 @@ This project demonstrates how autonomous mobile robots can improve logistics eff
   * Revolute arm joint
   * Suction pad end-effector
   * Additional structural components
+
 * Gazebo plugins:
 
   * Differential drive controller
@@ -138,6 +130,42 @@ This project demonstrates how autonomous mobile robots can improve logistics eff
 
 See demo video in:
 `media/demo.mp4`
+
+---
+
+## How to Run
+
+### Prerequisites
+
+* ROS (Noetic or compatible version)
+* Gazebo
+* OpenCV
+
+### Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/jessysutherns/ros2-autonomous-warehouse-robot.git
+```
+
+2. Move to your ROS workspace:
+
+```bash
+cd ~/catkin_ws/src
+```
+
+3. Build the workspace:
+
+```bash
+catkin_make
+```
+
+4. Launch the simulation:
+
+```bash
+roslaunch warehouse_robot warehouse_robot.launch
+```
 
 ---
 
